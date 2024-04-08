@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <title>Module Three: Design Study Lite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Module Three: Design Study Lite</h1>
+<p>Yejin (Gina) Jang</p>
+
+<h2>Precondition:</h2>
+<h3>Target Problem: Understanding Food Access in Rural Areas in North Carolina</h3>
+
+<h2>1. Learning:</h2>
+<p>Access to nutritious and inexpensive food has become a crucial issue in North Carolina's rural areas, particularly for vulnerable groups such as children, low-income families, and seniors. <a href="https://health.gov/healthypeople/priority-areas/social-determinants-health/literature-summaries/access-foods-support-healthy-dietary-patterns#:~:text=Having%20access%20to%20healthy%2C%20safe,patterns%20and%20negative%20health%20outcomes.">The Office of Disease Prevention and Health Promotion,</a> emphasizes the importance of this access for maintaining a healthy diet. The scarcity of grocery stores in these places severely limits these demographics' capacity to obtain basic food, raising possible health hazards. This huge imbalance necessitates targeted policy measures and solutions aimed at closing the food access gap and providing equitable dietary health chances for all community members.</p>
+
+<p>The target problem is to address food access challenges in rural areas, 
+    especially focusing on children, low-income families, and seniors. 
+    Rural areas often suffer from what are known as food deserts—places where access to affordable, 
+    healthy food options is limited because grocery stores are too far away. 
+    This lack of access contributes to a range of health issues, including higher rates of obesity, heart disease, and diabetes. 
+    Furthermore, the demographics in focus often face additional barriers due to limited mobility, 
+    financial constraints, or lack of awareness about healthy food options. 
+    By targeting these away from 10-mile from a supermarket, 
+    this aims to highlight the areas most in need of policy intervention and support.</p>
+
+<h2>2. Winnowing</h2>
+<p>Focusing on vulnerable groups like children, low-income individuals, and seniors, specific data columns are chosen from the CORGIS Dataset Project:</p>
+    <ul>
+        <li><strong>County and State</strong>: Counties in North Carolina</li>
+        <li><strong>Population</strong>: Population count from 2010 census</li>
+        <li><strong>Low Access Numbers.People.10 Miles</strong>: The count of people living over 10 miles from a supermarket 
+            to get the general number of people residing.</li>
+        <li><strong>Low Access Numbers.Children.10 Miles</strong>: The count of children in rural settings living over 10 miles from a supermarket</li>
+        <li><strong>Low Access Numbers.Low Income People.10 Miles</strong>: The number of low-income individuals situated more than 10 miles 
+            from food retail sources</li>
+        <li><strong>Low Access Numbers.Seniors.10 Miles</strong>: The senior population living beyond a 10-mile radius from supermarkets</li>
+    </ul>
+
+    <p>The dataset comes from the US Department of Agriculture's Economic Research Service 
+        and provides an overview of food access in the US. 
+        It is effective in identifying food deserts in rural locations 
+        with considerable geographic and economic restrictions, 
+        despite potential biases such as data currency and ignored food delivery services.
+    </p>
+
+    <p>We selected data for our research based on a 10-mile radius around supermarkets 
+        in order to better understand the problem of food access in rural areas, 
+        where geography is a major factor. Focusing on seniors, low-income families, and children 
+        allows us to highlight the populations most impacted by these issues. 
+        This method helps us acquire a whole view of the problem at hand, 
+        along with taking age and economic status into account. 
+        It is not only about how distant someone lives from a supermarket; 
+        it is also about how difficult it is for them to get to that store because of their unique situation.
+         With this thorough insight, more focused and efficient programs to increase these vulnerable people' access to food can be developed.
+    </p>
+
+<h2>3. Discover:</h2> 
+<h3>Task 1: Identify Food Deserts in Rural Areas</h2>
+<ul>
+  <li><strong>Why (Goal):</strong> Identify where access to supermarkets exceeds 10 miles for at-risk groups in rural areas.</li>
+  <li><strong>How (Means):</strong> Analyze geographic distances and demographic data.</li>
+  <li><strong>What (Characteristics):</strong> Rural regions marked by significant food access challenges.</li>
+  <li><strong>Where (Target Data):</strong> Demographic data on rural populations far from supermarkets.</li>
+  <li><strong>When (Workflow):</strong> Early analysis phase to prioritize regions for intervention.</li>
+  <li><strong>Who (Roles):</strong> Used by policymakers and community planners.</li>
+</ul>
+
+<h3>Task 2: Assess the Impact of Food Deserts on Vulnerable Populations</h2>
+<ul>
+  <li><strong>Why (Goal):</strong> Understand the effects of limited food access on health and economic status.</li>
+  <li><strong>How (Means):</strong> Correlate food desert data with health and economic outcomes.</li>
+  <li><strong>What (Characteristics):</strong> Insights on the health and economic challenges faced by these populations.</li>
+  <li><strong>Where (Target Data):</strong> Data intersection of food access and health/economic indicators.</li>
+  <li><strong>When (Workflow):</strong> After identifying food deserts, to deepen understanding and guide solutions.</li>
+  <li><strong>Who (Roles):</strong> Health experts, economists, and policy makers focusing on rural well-being.</li>
+</ul>
+
+<h2>4. Design:</h2>
+<p><img src="prototype.png" width="700"></p>
+<p>The bar chart shows how many people in various North Carolina counties 
+    struggle to find a supermarket within 10 miles. Organized from the most to the least affected, 
+    it highlights places like Beaufort and Pender Counties as particularly challenged. 
+    While its straightforward design makes comparing counties simple, 
+    it doesn't show us how big a part of each county's population is affected 
+    or give us a clear idea of where these people are located. 
+    This missing information, such as the density of the population and their exact locations, 
+    is important for making detailed plans, like deciding where new food stores or better bus routes might be needed.</p>
+
+<h2>5. Implement:</h2>
+<div class='tableauPlaceholder' id='viz1712547751594' style='position: relative'><noscript><a href='#'><img alt='Rural Food Access Map ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;5T&#47;5TDHT3FNX&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;5TDHT3FNX' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;5T&#47;5TDHT3FNX&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1712547751594');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+<p>
+    The choropleth map was created in Tableau and shows an interactive map 
+    detailing the proportions of people in North Carolina who are 10 miles away from a supermarket. 
+    The design allows users to see not just raw numbers, 
+    but the percentages that these numbers represent within the larger context of each county's population. 
+    Hovering over a county reveals a tooltip with detailed proportion data, 
+    including proportions of low-income individuals, children, and seniors. 
+    The choice to include proportions is based on prior research 
+    indicating the importance of understanding not just the presence of food access issues, 
+    but their scale relative to the population affected. 
+</p>
+<h2>6. Deploy:</h2>
+<p>
+
+ Using the Tableau visualization tool to investigate food access in North Carolina yielded key findings.
+ Hyde County has the largest proportion of vulnerable populations (children, low-income people, and seniors) 
+ residing more than ten miles from a supermarket. 
+ Chowan, Gates, and Bertie counties followed closely behind. 
+</p>
+
+<h2>7. Iterate:</h2>
+<p>
+    After looking into North Carolina's data, 
+    we find a new important task: checking how bus routes or ride-share options 
+    impact getting to food stores in rural areas. 
+    This task would link how far people are from stores to what transport is available.
+</p>
+<p>
+    To do this, the visualization tool would get an upgrade to show transport networks.
+    By adding information on where buses and ride-shares go, right on the existing map, 
+    users could easily see how transport affects food access. 
+    This update would also let users turn the transport view on and off, 
+    making it clear whether improving transport could help tackle the food desert issue,
+    pointing towards effective policy changes.
+</p>
+
+<h2>8: Reflect Pt.1:</h2>
+<p>
+    The tool we developed reveals a picture of food access in North Carolina, 
+    particularly affecting children, seniors, and low-income families in rural areas. 
+    It shows that solving food access isn't just about putting more stores on the map; 
+    it's about considering who can reach these stores and how. 
+    This suggests policies should not only encourage the setup of more local food sources 
+    but also improve transport links and support income levels to make food more accessible.
+     Historical trends, like the shift towards larger supermarkets, highlight the importance of these policies. 
+     We also see that integrating economic and transport data with food access information can guide better policy-making.
+</p>
+
+<h2>9. Reflect Pt.2:</h2>
+<p>
+    Creating this visualization taught us the importance of 
+    balance—between showing enough data to inform and not so much that it overwhelms. 
+    Tools like hover details and filters worked well to manage this. 
+    One challenge was making sure the map was clear and informative at a glance, 
+    which we achieved by focusing on key data points. 
+    For future projects, adding layers for additional context, 
+    like economic conditions or public transportation, could offer deeper insights. 
+</p>
+
+</body>
+</html>
